@@ -1,3 +1,8 @@
+for _,v in pairs(game.CoreGui:GetChildren()) do
+	if v.Name == "VyonLibrary" then
+		v:Destroy()
+	end
+end
 local VyonLibrary = Instance.new("ScreenGui")
 VyonLibrary.Name = "VyonLibrary"
 VyonLibrary.Parent = game.CoreGui
@@ -64,3 +69,4 @@ function Library:Window(Table)
 	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
 	Title.TextSize = 20.000
 end
+return Library
