@@ -1,7 +1,9 @@
+local VyonLibrary = Instance.new("ScreenGui")
+VyonLibrary.Name = "VyonLibrary"
+VyonLibrary.Parent = game.CoreGui
 Library = {}
 function Library:Window(Table)
 	local WindowName = Table.Name
-	local VyonLibrary = Instance.new("ScreenGui")
 	local Background = Instance.new("Frame")
 	local Tabs = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
