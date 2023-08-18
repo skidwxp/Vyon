@@ -35,7 +35,7 @@ function Library:Window(Table)
 	Tabs.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 	Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Tabs.BorderSizePixel = 0
-	Tabs.Position = UDim2.new(0.5, 0, 0.200000003, 0)
+	Tabs.Position = UDim2.new(0.5, 0, 0.150000006, 0)
 	Tabs.Size = UDim2.new(0, 400, 0, 30)
 	UICorner.Parent = Tabs
 	UIListLayout.Parent = Tabs
@@ -51,8 +51,8 @@ function Library:Window(Table)
 	TabHolder.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 	TabHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHolder.BorderSizePixel = 0
-	TabHolder.Position = UDim2.new(0.5, 0, 0.603333354, 0)
-	TabHolder.Size = UDim2.new(0, 400, 0, 200)
+	TabHolder.Position = UDim2.new(0.5, 0, 0.578333318, 0)
+	TabHolder.Size = UDim2.new(0, 400, 0, 215)
 	UICorner_2.Parent = TabHolder
 	UICorner_3.Parent = Background
 	Title.Name = "Title"
@@ -63,7 +63,7 @@ function Library:Window(Table)
 	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Title.BorderSizePixel = 0
 	Title.Position = UDim2.new(0.5, 0, 0, 0)
-	Title.Size = UDim2.new(0, 300, 0, 45)
+	Title.Size = UDim2.new(0, 300, 0, 30)
 	Title.Font = Enum.Font.Gotham
 	Title.Text = WindowName
 	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
