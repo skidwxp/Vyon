@@ -525,7 +525,7 @@ function Library:Create(table)
                                 math.clamp(Mouse.Y - ObjectPosition.Y, 0, dark_UI.AbsoluteSize.Y - main.AbsoluteSize.Y)
                             game:GetService("TweenService"):Create(
                                 main,
-                                TweenInfo.new(0.1),
+                                TweenInfo.new(0),
                                 {
                                     Position = UDim2.fromOffset(
                                         FrameX + (main.Size.X.Offset * main.AnchorPoint.X),
@@ -535,7 +535,7 @@ function Library:Create(table)
                             ):Play()
                             game:GetService("TweenService"):Create(
                                 shadow,
-                                TweenInfo.new(0.1),
+                                TweenInfo.new(0),
                                 {
                                     Position = UDim2.fromOffset(
                                         FrameX + (main.Size.X.Offset * main.AnchorPoint.X),
