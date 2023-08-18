@@ -3,10 +3,20 @@ for _,v in pairs(game.CoreGui:GetChildren()) do
 		v:Destroy()
 	end
 end
+
 local VyonLibrary = Instance.new("ScreenGui")
 VyonLibrary.Name = "VyonLibrary"
 VyonLibrary.Parent = game.CoreGui
+
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
 Library = {}
+
 function Library:Window(Table)
 	local WindowName = Table.Name
 	local Background = Instance.new("Frame")
@@ -68,5 +78,17 @@ function Library:Window(Table)
 	Title.Text = WindowName
 	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
 	Title.TextSize = 20.000
+	Background.MouseEnter:Connect(function()
+		local Input = Background.InputBegan:connect(function(Key)
+			if Key.UserInputType == Enum.UserInputType.MouseButton1 then
+				local ObjectPosition = Vector2.new(Mouse.X - Background.AbsolutePosition.X, Mouse.Y - Background.AbsolutePosition.Y)
+				while RunService.RenderStepped:wait() and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
+					local FrameX, FrameY = math.clamp(Mouse.X - ObjectPosition.X, 0, VyonLibrary.AbsoluteSize.X - Background.AbsoluteSize.X), math.clamp(Mouse.Y - ObjectPosition.Y, 0, VyonLibrary.AbsoluteSize.Y - Background.AbsoluteSize.Y)
+					game:GetService('TweenService'):Create(Background, TweenInfo.new(0.1), {Position = UDim2.fromOffset(FrameX + (Background.Size.X.Offset * Background.AnchorPoint.X), FrameY + (Background.Size.Y.Offset * Background.AnchorPoint.Y))}):Play()
+				end
+			end
+		end)
+	end)
 end
+
 return Library
